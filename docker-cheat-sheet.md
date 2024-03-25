@@ -30,6 +30,9 @@ A container provides a segregated environment for your code, facilitating the ex
     //Runs a new command in a running container
     $ docker exec -it <container_id> <command>
 
+    //Get logs from a running container
+    $ docker attach <container_id>
+
 ****docker run** command is a combination of **docker create** and **docker start**.
 1. **docker create <image_name>**
 2. **docker start <container_id>** OR **docker start -a <container_id>**
@@ -55,7 +58,24 @@ Run **docker exec -it <container_id> sh** to enter into container's terminal.
     $ docker run -p <route_incoming_req_to_this_port>:<container_port> <image_id>
 
 ### Docker Compose
-    
+    //Run all services define in docker-compose.yml
+    $ docker-compose up
+
+    //Re-build images and restart services
+    $ docker-compose up --build
+
+    //Stopping docker compose
+    $ docker-compose down
+
+    //List status of all container define in docker-compose.yml
+    $ docker-compose ps
+
+****Automatically restart containers**
+There are 4 restart policies available:
+- "no": Never attempt to restart the container If it stops or crashes.
+- always: If container stop for any reason always attempt to restart.
+- on-failure: Only restart if container stops with an error code.
+- unless-stopped: Always restart unless forcibly stop.
 ## Resources
 - [how-to-install-docker-on-ubuntu](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 
