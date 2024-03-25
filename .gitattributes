@@ -1,1 +1,3 @@
-README.md docker-cheat-sheet.md
+# Specify default README
+README.md export-ignore
+docker-cheat-sheet.md README.md
