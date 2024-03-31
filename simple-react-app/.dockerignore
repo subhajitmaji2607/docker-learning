@@ -1,0 +1,4 @@
+node_modules/
+Dockerfile.dev
+README.md
+.eslintrc.cjs
